@@ -1,6 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
+import restaurant from '../Images3/restaurant.jpg'
+import bd from '../Images3/bd.jpg'
+import im7 from '../Images3/im (7).jpeg'
 
 /* ------------------------------------------------------------------
    NE-YO HOTEL & SUITES — About Us Page Component
@@ -231,25 +234,28 @@ const PillarCard = styled.div`
 `;
 
 const CTASection = styled.section`
-  background: ${C.lagoon};
+  background: 
+    linear-gradient(rgba(0, 50, 126, 0.7), rgba(0, 50, 126, 0.7)),
+    url(${bd}) center/cover no-repeat;
   color: ${C.white};
   text-align: center;
-  padding: 60px 10px;
+  padding: 80px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  position: relative;
 
   h2 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 500;
     font-size: clamp(2.4rem, 5vw, 3.8rem);
-    color: ${C.brassLight};
+    color: ${C.white};
   }
 
   p {
     max-width: 580px;
-    opacity: 0.9;
+    opacity: 0.95;
     font-size: 1.05rem;
   }
 
@@ -284,6 +290,74 @@ const Button = styled.button`
   }
 `;
 
+const MotivationalSection = styled.section`
+  background: ${C.white};
+  color: ${C.lagoon};
+  text-align: center;
+  padding: 80px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+
+  /* Subtle top accent border using your brass theme color */
+  border-top: 1px solid ${C.brassLight || '#d4af37'};
+
+  .subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: ${'#b8860b'};
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    line-height: 1.25;
+    max-width: 800px;
+    color: ${C.lagoon};
+  }
+
+  p {
+    max-width: 620px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.85;
+    color: ${C.lagoon};
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 24px;
+
+    .stat-card {
+      padding: 20px;
+      border-radius: 8px;
+      background: #f9f9fb;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      
+      h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2rem;
+        color: ${'#b8860b'};
+        margin-bottom: 4px;
+      }
+
+      span {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+    }
+  }
+`;
+
 /* ------------------------------------------------------------------
    COMPONENT LOGIC
 ------------------------------------------------------------------- */
@@ -310,17 +384,23 @@ export default function AboutUsPage() {
           <TwoColumn>
             <ImageCollage>
               <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80"
+                // src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80"
+               src={restaurant}
+               
                 alt="NE-YO Hotel Architecture"
                 className="main-img"
               />
               <img
-                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80"
+                // src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80"
+                src={bd}
+                
                 alt="Poolside at NE-YO"
                 className="sub-img"
               />
               <img
-                src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
+                // src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
+                src={im7}
+                
                 alt="Luxury Suite Interior"
                 className="sub-img"
               />
@@ -389,6 +469,30 @@ export default function AboutUsPage() {
           <Button $ghost onClick={() => navigate("/contact")}>Contact Concierge</Button>
         </div>
       </CTASection>
+
+      {/* motivation section */}
+      <MotivationalSection>
+  <span className="subtitle">Crafted for Distinction</span>
+  <h2>Every Detail Designed around Your Ultimate Comfort</h2>
+  <p>
+    Step into an atmosphere where elegance meets modern hospitality. Whether you're unwinding after a long journey or celebrating life's quiet moments, we create experiences that resonate far beyond your stay.
+  </p>
+
+  <div className="highlights-grid">
+    <div className="stat-card">
+      <h3>100%</h3>
+      <span>Tailored Comfort</span>
+    </div>
+    <div className="stat-card">
+      <h3>24 / 7</h3>
+      <span>Dedicated Service</span>
+    </div>
+    <div className="stat-card">
+      <h3>5 ★</h3>
+      <span>Guest Experience</span>
+    </div>
+  </div>
+</MotivationalSection>
     </AboutWrap>
   );
 }

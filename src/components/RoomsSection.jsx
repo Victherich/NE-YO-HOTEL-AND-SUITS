@@ -125,7 +125,7 @@ export default function RoomsSection({ onSelectRoom }) {
               <RoomCard>
                 <div className="pic">
                   <img src={r.images[0]} alt={r.name} loading="lazy" />
-                  <span className="price">{r.price} / night</span>
+               <span className="price">₦{Number(r.price).toLocaleString()} / night</span>
                 </div>
                 <div className="body">
                   <h3>{r.name}</h3>

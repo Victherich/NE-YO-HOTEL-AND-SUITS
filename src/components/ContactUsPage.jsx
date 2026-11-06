@@ -344,7 +344,8 @@ export default function ContactUsPage() {
               <i>📍</i>
               <div>
                 <b>Location</b>
-                <span>7 NE-YO Road, GRA Phase 2, Asaba,
+                <span>No. 7 Ne-yo Road, by Midwifery Market, Opp Christ The King 
+Catholic Church, GRA Phase 2, Asaba,
 Delta State, Nigeria</span>
               </div>
             </div>
@@ -359,12 +360,11 @@ Delta State, Nigeria</span>
 
             <div className="row">
               <i>✉️</i>
-              <div>
-                <b>Concierge Email</b>
-                <span>admin@neyo.com</span>
-              </div>
-            </div>
-
+        
+                <div><b>Email</b><span>stay@neyohotel.com, admin@neyohotel.com, contact@neyohotel.com </span></div></div>
+              
+              
+            
             <div className="row">
               <i>⏰</i>
               <div>

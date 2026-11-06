@@ -226,8 +226,8 @@ const HotelDetail = () => {
   const modalHotelPayload = {
     ...room,
     hotel_name: room.name,
-    price_per_night: room.price_numeric,
-    location: "NE-YO Hotel & Suites, Lagos",
+    price_per_night: room.price,
+    location: "NE-YO Hotel & Suites",
     hotel_images: room.images.map(imgId => imgUrl(imgId, 800))
   };
 
@@ -254,7 +254,7 @@ const HotelDetail = () => {
       <DetailsGrid>
         <DetailItem>
           Price per night
-          <span>{room.price}</span>
+       <span className="price">₦{Number(room.price).toLocaleString()} / night</span>
         </DetailItem>
         <DetailItem>
           Capacity &amp; Space

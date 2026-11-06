@@ -51,7 +51,18 @@ import im10 from '../Images3/im (10).jpeg';
 import im20 from '../Images3/im (20).jpeg';
 import im28 from '../Images3/im (28).jpeg';
 import HotelVideoShowcase from "./HotelVideoShowcase";
-
+import { useLocation } from "react-router-dom";
+import im0 from '../Images3/im0.jpg'
+import bd from '../Images3/bd.jpg'
+import restaurant from '../Images3/restaurant.jpg'
+import fl1 from '../Images3/fl1.jpeg'
+import WeAreHiringSection from "./WeAreHiringSection";
+import gl1 from '../Images3/gl1.jpeg'
+import gl2 from '../Images3/gl2.jpeg'
+import gl3 from '../Images3/gl3.jpeg'
+import gl4 from '../Images3/gl4.jpeg'
+import gl5 from '../Images3/gl5.jpeg'
+import PromoPopup from "./PromoPopup";
 /* ------------------------------------------------------------------
    NE-YO HOTEL & SUITES — Landing page (no header / footer)
    Install:  npm i styled-components react-awesome-reveal
@@ -67,6 +78,7 @@ const C = {
   mist: "#E9EFEC",
   white: "#FFFFFF",
   lagoon: "#0F3B3A",
+  // lagoon:"rgba(0, 50, 126, 0.7)",
   lagoonSoft: "#1D5754",
   brass: "#B08D57",
   brassLight: "#E3CFA6",
@@ -78,16 +90,19 @@ const C = {
 
 
 const heroSlides = [
-  { img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80", title: "A palace of quiet luxury", sub: "Suites made for slow mornings and unhurried evenings." },
+  // { img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80", title: "A palace of quiet luxury", sub: "Suites made for slow mornings and unhurried evenings." },
+  { img: im0, title: "A palace of quiet luxury", sub: "Suites made for slow mornings and unhurried evenings." },
   { img: im2, title: "A palace of quiet luxury", sub: "Suites made for slow mornings and unhurried evenings." },
 
-  { img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80", title: "Swim into golden hour", sub: "An infinity pool that melts into the Lagos sky." },
-  { img: im3, title: "Swim into golden hour", sub: "An infinity pool that melts into the Lagos sky." },
+  { img: im5, title: "Swim into golden hour", sub: "An infinity pool that melts into the Asaba sky." },
+  { img: im3, title: "Swim into golden hour", sub: "An infinity pool that melts into the Asaba sky." },
 
-  { img: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80", title: "Sleep well in pure silk", sub: "Hand-finished linens, deep soaking tubs, total stillness." },
+  { img: bd, title: "Sleep well in pure silk", sub: "Hand-finished linens, deep soaking tubs, total stillness." },
   { img: im8, title: "Sleep well in pure silk", sub: "Hand-finished linens, deep soaking tubs, total stillness." },
 
-  { img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80", title: "Dine beneath the stars", sub: "Chef-led menus on a candlelit rooftop terrace." },
+  // { img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80", title: "Dine beneath the stars", sub: "Chef-led menus on a candlelit rooftop terrace." },
+ { img: restaurant, title: "Dine beneath the stars", sub: "Chef-led menus on a candlelit rooftop terrace." },
+ 
   { img: im97, title: "Dine beneath the stars", sub: "Chef-led menus on a candlelit rooftop terrace." },
 ];
 
@@ -112,9 +127,9 @@ const amenities = [
 ];
 
 const dining = [
-  { img: "photo-1414235077428-338989a2e8c0", name: "Oriki Restaurant", d: "Modern Nigerian and continental tasting menus." },
-  { img: "photo-1517248135467-4c7edcad34c4", name: "The Terrace", d: "Rooftop grill, seafood and sunset dining." },
-  { img: "photo-1514933651103-005eec06c04b", name: "Velvet Bar", d: "Rare spirits, champagne and live music." },
+  { img: restaurant, name: "Oriki Restaurant", d: "Modern Nigerian and continental tasting menus." },
+  { img: im6, name: "The Terrace", d: "Grill, seafood and sunset dining." },
+  { img: gl3, name: "Velvet Bar", d: "Rare spirits, champagne and live music." },
 ];
 
 // const gallery = [
@@ -128,23 +143,24 @@ const dining = [
 
 
 const gallery = [
-  { id: im1, span: "tall" },
-  { id: im4, span: "wide" },
-  { id: im5, span: "" },
-  { id: im6, span: "" },
-  { id: im7, span: "wide" },
-  { id: im10, span: "tall" },
+  { id: gl1, span: "tall" },
+  { id: gl2, span: "wide" },
+  { id: gl3, span: "" },
+  { id: gl4, span: "" },
+  { id: gl5, span: "wide" },
+  // { id: im10, span: "wide" },
+  //  { id: im8, span: "wide" },
 ];
 
 const offers = [
   { t: "The Honeymoon Escape", d: "3 nights in a Royal Terrace Suite, champagne, couples spa and a private dinner.", tag: "Save 20%" },
   { t: "Weekend Retreat", d: "Late checkout, full breakfast and a 60-minute massage for two.", tag: "From ₦240,000" },
-  { t: "Long Stay Residence", d: "Stay 7 nights, pay for 5. Laundry and airport transfers included.", tag: "2 nights free" },
+  { t: "Long Stay Residence", d: "Stay 7 days onwards night free.", tag: "2 nights free" },
 ];
 
 const reviews = [
   { q: "Every detail felt considered. The suite was silent, the staff remembered my name by the second morning.", a: "Adaeze O.", r: "Business traveller, Abuja" },
-  { q: "We celebrated our wedding weekend here. The terrace at sunset is the most beautiful setting in Lagos.", a: "Tunde & Ify", r: "Newlyweds, London" },
+  { q: "We celebrated our wedding weekend here. The terrace at sunset is the most beautiful setting in Asaba.", a: "Tunde & Ify", r: "Newlyweds, London" },
   { q: "The spa alone is worth the trip. I left rested in a way no hotel has managed before.", a: "Sarah M.", r: "Guest, Accra" },
 ];
 
@@ -722,7 +738,10 @@ const Events = styled.div`
   text-align: center;
   color: ${C.white};
   padding: 10px;
-  background: linear-gradient(rgba(15,59,58,0.7), rgba(15,59,58,0.78)), url(${(p) => p.$src}) center / cover fixed;
+  // background:rgba(0, 50, 126, 0.7);
+  // background: linear-gradient(rgba(15,59,58,0.7), rgba(15,59,58,0.78)), url(${(p) => p.$src}) center / cover fixed;
+  background: linear-gradient(rgba(0,50,126,0.5), rgba(0,50,126,0.7)), url(${(p) => p.$src}) center / cover fixed;
+ 
   @media (max-width: 900px) { background-attachment: scroll; }
   .in { max-width: 740px; padding: 10px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
   h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2.3rem, 6vw, 4.2rem); line-height: 1.05; }
@@ -822,7 +841,65 @@ export default function LandingPage() {
     phone: '',
     message: ''
   });
+  const [showPromo, setShowPromo] = useState(false);
+
+  // Trigger popup every 3 minutes (180,000 ms)
+  useEffect(() => {
+    // Show initially after 3 seconds for first-time visitors
+    const initialTimer = setTimeout(() => {
+      setShowPromo(true);
+    }, 3000);
+
+    // Repeat every 3 minutes (180,000 ms)
+    const intervalTimer = setInterval(() => {
+      setShowPromo(true);
+    }, 180000);
+
+    return () => {
+      clearTimeout(initialTimer);
+      clearInterval(intervalTimer);
+    };
+  }, []);
+
+  const handleClaimPromo = () => {
+    // Scrolls to the rooms or contact section when they click "Claim Promo & Book Now"
+    document.getElementById("rooms")?.scrollIntoView({ behavior: "smooth" });
+  };
  
+
+
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // If the header passed a section ID via router state, scroll to it
+    if (location.state?.scrollTo) {
+      const el = document.getElementById(location.state.scrollTo);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
+  useEffect(() => {
+  if (location.hash) {
+    const id = location.hash.replace("#", "");
+    // Small timeout ensures the DOM nodes have finished mounting after route change
+    const timer = setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        window.scrollTo({
+          top: el.getBoundingClientRect().top + window.scrollY - 70,
+          behavior: "smooth"
+        });
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }
+}, [location]);
+  
 
 
   // Handle controlled input changes
@@ -909,6 +986,8 @@ export default function LandingPage() {
   }
 };
 
+
+
   return (
     <Page>
       <Global />
@@ -939,7 +1018,7 @@ export default function LandingPage() {
             <HeroBtns>
               <Button onClick={goBook}>Explore suites</Button>
               <Button $ghost onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-                Plan an event
+                Book now
               </Button>
             </HeroBtns>
           </Fade>
@@ -980,9 +1059,9 @@ export default function LandingPage() {
                 <img className="c" src={img("photo-1584132967334-10e028bd69f7", 600)} alt="Hotel suite" loading="lazy" />
               </Collage> */}
                <Collage>
-                <img className="a" src={im1} alt="NE-YO Hotel lobby" loading="lazy" />
-                <img className="b" src={im5} alt="Resort pool view" loading="lazy" />
-                <img className="c" src={im6} alt="Hotel suite" loading="lazy" />
+                <img className="a" src={gl1} alt="NE-YO Hotel lobby" loading="lazy" />
+                <img className="b" src={gl2} alt="Resort pool view" loading="lazy" />
+                <img className="c" src={gl3} alt="Hotel suite" loading="lazy" />
               </Collage>
             </Slide>
             <Copy>
@@ -1081,7 +1160,7 @@ export default function LandingPage() {
           <Fade direction="up" triggerOnce>
             <Heading>
               <small>Dining &amp; bars</small>
-              {/* <h2>Three places to taste Lagos</h2> */}
+              {/* <h2>Three places to taste Asaba</h2> */}
               <p>Local ingredients, global technique and service that glides.</p>
             </Heading>
           </Fade>
@@ -1089,7 +1168,7 @@ export default function LandingPage() {
             {dining.map((d, i) => (
               <Slide key={d.name} direction={i === 0 ? "left" : i === 2 ? "right" : "up"} triggerOnce duration={1100} style={{ height: "100%" }}>
                 <DineCard>
-                  <img src={img(d.img, 900)} alt={d.name} loading="lazy" />
+                  <img src={d.img} alt={d.name} loading="lazy" />
                   <div className="txt">
                     <h3>{d.name}</h3>
                     <p>{d.d}</p>
@@ -1147,11 +1226,11 @@ export default function LandingPage() {
           </Masonry>
         </Container>
       </Section>
-      {lightbox && (
+      {/* {lightbox && (
         <Lightbox onClick={() => setLightbox(null)} role="dialog" aria-label="Photo preview">
           <img src={img(lightbox, 1800)} alt="NE-YO Hotel and Suites enlarged" />
         </Lightbox>
-      )}
+      )} */}
 
       {/* ----------------------------- OFFERS ------------------------- */}
       <Section id="offers">
@@ -1178,7 +1257,8 @@ export default function LandingPage() {
       </Section>
 
       {/* ---------------------------- EVENTS -------------------------- */}
-      <Events $src={img("photo-1519741497674-611481863552", 2000)} id="events">
+      {/* <Events $src={img("photo-1519741497674-611481863552", 2000)} id="events"> */}
+              <Events $src={img("photo-1519225421980-715cb0215aed", 2000)} id="events">
         <div className="in">
           <Fade cascade damping={0.2} triggerOnce duration={1100} direction="up">
             <h2>Weddings, galas and boardrooms</h2>
@@ -1192,6 +1272,21 @@ export default function LandingPage() {
           </Fade>
         </div>
       </Events>
+
+      <Events $src={img("photo-1530103862676-de8c9debad1d", 2000)} id="events">
+  <div className="in">
+    <Fade cascade damping={0.2} triggerOnce duration={1100} direction="up">
+      <h2>Birthday Celebrations & Milestones</h2>
+      <p>From intimate dinner parties to grand birthday galas. Our event planners take care of custom décor, gourmet catering, and every detail to make your celebration unforgettable.</p>
+      <div className="chips">
+        <span>Milestone Birthdays</span><span>Theme Parties</span><span>Private Dining</span><span>VIP Lounges</span>
+      </div>
+       <Button $ghost onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+              Plan your Birthday
+            </Button>
+    </Fade>
+  </div>
+</Events>
 
       {/* ---------------------------- REVIEWS ------------------------- */}
       <Section id="reviews" $tint>
@@ -1248,7 +1343,7 @@ export default function LandingPage() {
         <Container>
           <Fade direction="up" triggerOnce>
             <Heading>
-              <small>Reservations</small>
+              <small>Reservations</small>ller
               <h2>Let us prepare your arrival</h2>
               <p>Send your dates and our team replies within the hour.</p>
             </Heading>
@@ -1257,15 +1352,15 @@ export default function LandingPage() {
             <Slide direction="left" triggerOnce duration={1100} style={{ height: "100%" }}>
               <Info>
                 <h3>Find us</h3>
-                <div className="row"><i>📍</i><div><b>Address</b><span>7 NE-YO Road, GRA Phase 2, Asaba, Delta State, Nigeria</span></div></div>
+                <div className="row"><i>📍</i><div><b>Address</b><span>7 Ne-yo Road, by Midwifery Market, Opp Christ The King 
+Catholic Church, GRA Phase 2, Asaba, Delta State, Nigeria</span></div></div>
                 <div className="row"><i>📞</i><div><b>Reservations</b><span>+234 818 192 4856, +234 818 192 4836</span></div></div>
-                <div className="row"><i>✉️</i><div><b>Email</b><span>stay@neyohotel.com</span></div></div>
-                {/* <div className="row"><i>🛬</i><div><b>Airport</b><span>45 minutes from Murtala Muhammed International</span></div></div> */}
-                <iframe
+                <div className="row"><i>✉️</i><div><b>Email</b><span>stay@neyohotel.com, admin@neyohotel.com, contact@neyohotel.com </span></div></div>
+                       <iframe
                   className="map"
                   title="NE-YO Hotel location"
                   loading="lazy"
-                  src="https://www.google.com/maps?q=Victoria+Island+Lagos&output=embed"
+                 src="https://www.google.com/maps?q=Asaba+Delta+State+Nigeria&output=embed"
                 />
               </Info>
             </Slide>
@@ -1330,6 +1425,8 @@ export default function LandingPage() {
         </Container>
       </Section>
 
+    
+
       {/* ---------------------------- NEWSLETTER ---------------------- */}
       <Newsletter>
         <Fade direction="up" triggerOnce>
@@ -1343,6 +1440,13 @@ export default function LandingPage() {
           </form>
         </Fade>
       </Newsletter>
+        <WeAreHiringSection/>
+        {/* Promo Popup Component */}
+      <PromoPopup 
+        isOpen={showPromo} 
+        onClose={() => setShowPromo(false)} 
+        onClaim={handleClaimPromo} 
+      />
     </Page>
   );
 }

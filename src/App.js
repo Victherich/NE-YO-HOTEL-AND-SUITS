@@ -22,7 +22,6 @@ import AppointmentBookingPage from './components/AppointmentBookingPage';
 import FlightPage from './components/FlightPage';
 import PaymentComponent from './components/PaymentComponent';
 import PaymentPage from './components/PaymentPage';
-import HotelBookingPage from './components/HotelBookingPage';
 import ManageHotels from './components/ManageHotels';
 import HotelDetail from './components/HotelDetail';
 import HotelsPage from './components/HotelsPage';

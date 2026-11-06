@@ -264,6 +264,7 @@ import { adminLogout } from '../Features/Slice';
 import AdminSignup from './AdminSignUp.jsx';
 import ManageHotels from './ManageHotels.jsx';
 import ManageBookings from './ManageBookings.jsx';
+import AdminDetailsPage from './AdminProfile.jsx';
 
 /* ------------------------------------------------------------------
    NE-YO LUXURY DESIGN SYSTEM THEME
@@ -418,7 +419,7 @@ const Overlay = styled.div`
 // Main Component
 const AdminDashboard = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState('managehotels');
+  const [activeMenu, setActiveMenu] = useState('profile');
   const adminInfo = useSelector(state => state.adminInfo);
   
   console.log(adminInfo);
@@ -462,6 +463,9 @@ const AdminDashboard = () => {
   // Map menu options to content
   const renderContent = () => {
     switch (activeMenu) {
+
+        case 'profile':
+        return <AdminDetailsPage adminId={adminInfo.id} handleMenuClick={handleMenuClick} handleLogout={handleLogout}/>;
       case 'managebookings':
         return <ManageBookings />;
 
@@ -496,12 +500,12 @@ const AdminDashboard = () => {
           <span>Admin Suite</span>
         </SidebarHeader>
         <SidebarMenu>
-          {/* <SidebarMenuItem
-            active={activeMenu === 'managehotels'}
-            onClick={() => handleMenuClick('managehotels')}
+          <SidebarMenuItem
+            active={activeMenu === 'profile'}
+            onClick={() => handleMenuClick('profile')}
           >
-            Manage Hotels
-          </SidebarMenuItem> */}
+            Hi Admin
+          </SidebarMenuItem>
 
               <SidebarMenuItem
             active={activeMenu === 'managebookings'}

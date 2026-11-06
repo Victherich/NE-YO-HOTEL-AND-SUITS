@@ -36,11 +36,57 @@ import im42 from '../Images3/im (42).jpeg';
 import im43 from '../Images3/im (43).jpeg';
 import im44 from '../Images3/im (44).jpeg';
 import im45 from '../Images3/im (45).jpeg';
+import spstand1 from '../Images3/spstand1 (1).jpeg';
+
+import spstand2 from '../Images3/spstand1 (2).jpeg';
+import spstand3 from '../Images3/spstand1 (3).jpeg';
+// 1
+import spexe1 from '../Images3/spexe1 (1).jpeg';
+
+// 2
+import spexe2 from '../Images3/spexe1 (2).jpeg';
+
+// 3
+import spexe3 from '../Images3/spexe1 (3).jpeg';
+
+// 4
+import spexe4 from '../Images3/spexe1 (4).jpeg';
+
+import spexe5 from '../Images3/spexe1 (5).jpeg';
+import stndd1 from '../Images3/stndd (1).jpeg';
+import stndd2 from '../Images3/stndd (2).jpeg';
+import stndd3 from '../Images3/stndd (3).jpeg';
+import stndd4 from '../Images3/stndd (4).jpeg';
+import stndd5 from '../Images3/stndd (5).jpeg';
+import stndd6 from '../Images3/stndd (6).jpeg';
+// 1
+import glb1 from '../Images3/glb1.jpeg';
+
+// 2
+import glb2 from '../Images3/glb2.jpeg';
+
+// 3
+import glb3 from '../Images3/glb3.jpeg';
+
+// 4
+import glb4 from '../Images3/glb4.jpeg';
+
+// 5
+import glb5 from '../Images3/glb5.jpeg';
+
+// 6
+import glb6 from '../Images3/glb6.jpeg';
+
+// 7
+import glb7 from '../Images3/glb7.jpeg';
+
+// 8
+import glb8 from '../Images3/glb8.jpeg';
 
 export const Context = createContext();
 
 const ContextProvider = ({children}) => {
-// const api_url="https://elexdonpay.com/api_neyo"
+// const api_url="https://neyohotel.com/api_neyo"
 
 const api_url="https://neyohotel.com/api_neyo"
 
@@ -87,20 +133,21 @@ const api_url="https://neyohotel.com/api_neyo"
 const roomsData = [
   {
     id: 1,
-    images: [im9, im10, im11, im12],
+    images: [spexe1, spexe2, spexe3, spexe4, spexe5],
     name: "Super Executive Luxury Room",
     size: "First Floor",
     guests: "2 guests",
-    price: "₦80,000",
+    price: 80000,
     perks: ["Air conditioning", "Gym & pool access", "Minibar", "Flat-screen TV", "Free Wi-Fi", "Breakfast included"]
   },
   {
     id: 2,
-    images: [im13, im14, im15, im16],
+    // images: [im13, im14, im15, im16],
+    images:[glb1, glb2, glb3,glb4,glb5,glb6,glb7,glb8],
     name: "Luxury Executive Room",
     size: "First Floor",
     guests: "2 guests",
-    price: "₦70,000",
+    price: 70000,
     perks: ["Twin beds (2 x 0.90m)", "Air conditioning", "Gym & pool access", "Minibar", "Flat-screen TV", "Free Wi-Fi", "Breakfast included"]
   },
   {
@@ -109,25 +156,26 @@ const roomsData = [
     name: "Standard Executive Room",
     size: "First Floor",
     guests: "2 guests",
-    price: "₦60,000",
+    price: 60000,
     perks: ["Large bed", "Air conditioning", "Gym & pool access", "Minibar", "Flat-screen TV", "Free Wi-Fi", "Breakfast included"]
   },
   {
     id: 4,
-    images: [im21, im22, im23, im24],
+    // images: [im21, im22, im23, im24],
+    images:[stndd1, stndd2, stndd3, stndd4, stndd5, stndd6],
     name: "Standard Deluxe Room",
     size: "Ground / First Floor",
     guests: "2 guests",
-    price: "₦50,000",
+    price: 40000,
     perks: ["Air conditioning", "Gym & pool access", "Minibar", "Flat-screen TV", "Free Wi-Fi", "Breakfast included"]
   },
   {
     id: 5,
-    images: [im25, im26, im27, im28],
+    images: [spstand1, spstand2, spstand3],
     name: "Super Standard Room",
     size: "First Floor",
     guests: "2 guests",
-    price: "₦40,000",
+    price: 50000,
     perks: ["Air conditioning", "Gym & pool access", "Minibar", "Flat-screen TV", "Free Wi-Fi", "Breakfast included"]
   }
 ];

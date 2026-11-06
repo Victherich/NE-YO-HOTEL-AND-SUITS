@@ -22,14 +22,14 @@ const ShowcaseSection = styled.section`
 const ShowcaseContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 40px;
+  // display: grid;
+  // grid-template-columns: 1fr 1.1fr;
+  // gap: 40px;
   align-items: center;
 
   @media (max-width: 880px) {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    // grid-template-columns: 1fr;
+    // gap: 30px;
   }
 `;
 
@@ -104,6 +104,7 @@ const ContentBox = styled.div`
   flex-direction: column;
   gap: 16px;
   text-align: left;
+  width:100%
 
   small {
     font-family: 'Cormorant Garamond', serif;
@@ -198,7 +199,7 @@ export default function HotelVideoShowcase({ videoSrc, onExploreClick }) {
     <ShowcaseSection>
       <ShowcaseContainer>
         {/* Left: Vertical Video */}
-        <VideoWrapper>
+        {/* <VideoWrapper>
           <div className="badge">Cinematic Tour</div>
           <video
             ref={videoRef}
@@ -214,7 +215,7 @@ export default function HotelVideoShowcase({ videoSrc, onExploreClick }) {
               {isPlaying ? "❚❚" : "▶"}
             </div>
           </PlayOverlay>
-        </VideoWrapper>
+        </VideoWrapper> */}
 
         {/* Right: Elegant Write-Up */}
         <ContentBox>
